@@ -1,5 +1,4 @@
 #include "tokenizer.h"
-#include <string.h>
 
 typedef struct Parser{
     size_t tokens_size;

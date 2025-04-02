@@ -30,6 +30,7 @@ end
 
 function M.ProcessTextWithBinary(text)
 	local binary_path = get_binary_path()
+	print(binary_path)
 
 	-- Escape special characters in the text for shell safety
 	local escaped_text = text:gsub("'", "'\\''")
