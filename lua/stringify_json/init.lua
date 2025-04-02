@@ -2,9 +2,10 @@ local M = {}
 
 -- Get the path to your binary (assuming it's in the same directory as this Lua file)
 local function get_binary_path()
+	-- Get the path of init.lua
 	local script_path = debug.getinfo(1, "S").source:sub(2)
-	local plugin_dir = vim.fn.fnamemodify(script_path, ":h")
-	return plugin_dir .. "/serializer" -- Replace with your binary's name
+	local plugin_root = vim.fn.fnamemodify(script_path, ":h:h:h") -- Go up three levels to plugin root
+	return plugin_root .. "/serializer" -- Binary is in the root
 end
 
 function M.GetVisualSelection()
