@@ -31,7 +31,6 @@ end
 
 function M.ProcessTextWithBinary(text)
 	local binary_path = get_binary_path()
-	print(binary_path)
 
 	-- Escape special characters in the text for shell safety
 	local escaped_text = text:gsub("'", "'\\''")
@@ -67,7 +66,7 @@ function M.ProcessVisualSelection()
 	vim.fn.setreg("+", processed) -- Also set the system clipboard if available
 	vim.fn.setreg("*", processed) -- For X11 primary selection
 
-	print("Processed text saved to paste buffer")
+	print("json foramt saved to paste buffer")
 end
 
 -- Set up the keymap
